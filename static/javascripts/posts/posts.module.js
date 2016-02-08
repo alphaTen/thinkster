@@ -1,5 +1,5 @@
 (function(){
-	'use strict'
+	'use strict';
 
 	angular
 		.module('thinkster.posts',[
@@ -15,6 +15,6 @@
 		.module('thinkster.posts.services',[]);
 
 	angular
-		.module('thinkster.posts.directives',[ngDialog]);
+		.module('thinkster.posts.directives',['ngDialog']);
 	
-})
+})();

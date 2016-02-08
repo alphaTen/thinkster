@@ -1,8 +1,8 @@
-(function($,_){
+(function($, _){
 	'use strict';
 
-	angluar
-		.module('thinkster.utils.serives')
+	angular
+		.module('thinkster.utils.services')
 		.factory('Snackbar',Snackbar);
 
 	function Snackbar(){
@@ -16,7 +16,7 @@
 			options = _.extend({timeout:3000}, options);
 			options.content = content;
 
-			$.snackbar = options;
+			$.snackbar(options);
 		}
 
 		function error(content, options){
@@ -28,4 +28,4 @@
 		}
 	}
 
-})($,_);
+})($, _);

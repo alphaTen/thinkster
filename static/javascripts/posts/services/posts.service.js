@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	anglular
+	angular
 		.module('thinkster.posts.services')
 		.factory('Posts',Posts);
 
@@ -15,19 +15,19 @@
 		};
 
 		return Posts;
-	}
 
-	function all(){
-		return $http.get('/api/v1/posts/');
-	}
+		function all(){
+			return $http.get('/api/v1/posts/');
+		}
 
-	function create(content){
-		return $http.post('/api/v1/posts/',{
-			content:content
-		});
-	}
+		function create(content){
+			return $http.post('/api/v1/posts/',{
+				content:content
+			});
+		}
 
-	function get(username){
-		return $http.get('/api/v1/accounts/'+username+'/posts/');
-	}	
-})
+		function get(username){
+			return $http.get('/api/v1/accounts/'+username+'/posts/');
+		}
+	}
+})();
