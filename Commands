@@ -1,0 +1,13 @@
+django-admin startproject thinkster
+cd thinkster/
+python manage.py runserver
+python manage.py startapp authentication
+
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install python-mysqldb
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+
+
