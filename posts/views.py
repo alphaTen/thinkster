@@ -22,7 +22,7 @@ class PostViewSet(viewsets.ModelViewSet):
 		return (permissions.isAuthenticated(), IsAuthorOfPost(),)
 
 	def perform_create(self,serializer):
-		instance = serializer.save(author = self.request.author)
+		instance = serializer.save(author = self.request.user)
 
 		return super(PostViewSet, self).perform_create(serializer)
 
@@ -31,7 +31,7 @@ class AccountPostsViewSet(viewsets.ViewSet):
 	serializer_class=PostSerializer
 
 	def list(self,request,account_username=None):
-		queryset = self.queryset.filter(author_username = account_username)
+		queryset = self.queryset.filter(author__username = account_username)
 		serializer = self.serializer_class(queryset,many=True)
 
 		return Response(serializer.data)
